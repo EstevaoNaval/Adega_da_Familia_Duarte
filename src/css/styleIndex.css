@@ -1,0 +1,66 @@
+body {
+    font-family: 'Lobster', cursive;
+    background-color: #800000;
+}
+
+.linha-vertical {
+    height: 320px;/*Altura da linha*/
+    border-left: 2px solid #800000;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+}
+
+#telaInicial {
+    background-image: url('../assets/site/telaInicial.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    position: relative; 
+    height: 540px;
+}
+
+#textoTelaInicial {
+    padding: 50px;
+}
+
+#sobreNos {
+    background-image: url('../assets/site/barril-vinho-casas.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    position: relative;
+}
+
+#loginCadastro {
+    background-image: url("../assets/site/vinhoLoginCadastro.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#entrar {
+    color: white;
+    background-color: #800000;
+}
+
+#cadastro {
+    color: white;
+    background-color: #800000;
+}
+
+.jarallax {
+    position: relative;
+    z-index: 0;
+}
+
+#catalogoVinho {
+    background-image: url("../assets/site/catalogoVinho.jpg"); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    position: relative;
+    color: white;
+}
+
+#setCardPadrao {
+    background-color: #800000;
+}
+
+
+
+
