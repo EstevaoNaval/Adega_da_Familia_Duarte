@@ -34,12 +34,7 @@ body {
     position: relative;
 }
 
-#entrar {
-    color: white;
-    background-color: #800000;
-}
-
-#cadastro {
+#entrar, #cadastro {
     color: white;
     background-color: #800000;
 }
