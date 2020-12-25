@@ -16,27 +16,7 @@ body {
     z-index: 0;
 }
 
-#dadosPessoais {
-    color: white;
-    background-color: #800000;
-}
-
-#edicaoUsuario {
-    color: white;
-    background-color: #800000;
-}
-
-#cadastroVinho {
-    color: white;
-    background-color: #800000;
-}
-
-#trocaSenha {
-    color: white;
-    background-color: #800000;
-}
-
-#edicaoPerfil {
+#dadosPessoais, #edicaoUsuario, #cadastroVinho, #trocaSenha, #edicaoPerfil {
     color: white;
     background-color: #800000;
 }
