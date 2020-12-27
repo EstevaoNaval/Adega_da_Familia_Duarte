@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="nav-item active border border-light mx-1 mb-1 rounded-pill">
-                    <a class="nav-link" href="pagCatalogoVinho.php"><img src="https://img.icons8.com/ios-filled/50/ffffff/wine-glass.png" class="mx-2" height="16" width="16"/>Catálogo de Vinhos</a>
+                    <a class="nav-link" href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/wine-glass.png" class="mx-2" height="16" width="16"/>Catálogo de Vinhos</a>
                 </li>
                 <li class="nav-item active border border-light mx-1 mb-1 rounded-pill">
                     <a class="nav-link" href="../inicial/index.php#FAQ">

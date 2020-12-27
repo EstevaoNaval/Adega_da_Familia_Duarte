@@ -14,6 +14,10 @@
         $Resultado->execute();
 
         $Dados = $Resultado->fetch(PDO::FETCH_ASSOC);
+        if($Dados["TipoUsuario"] != "admin"):
+            header("location: ../inicial/index.php");
+            exit();
+        endif;
 
         $ID = $_GET["id"];
 
@@ -25,6 +29,7 @@
         $DadosVinho = $Resultado->fetch(PDO::FETCH_ASSOC); 
     else:
         header("location: ../inicial/index.php");
+        exit();
     endif;
 ?>
 
