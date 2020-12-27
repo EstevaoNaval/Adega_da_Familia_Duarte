@@ -11,6 +11,8 @@
         $ListaErro = "";
 
         $NomeCompleto = $_POST["cadastroNomeCompleto"];
+        $Apelido = $_POST["cadastroApelido"];
+        
         
         $Tel = strval($_POST["cadastroTel"]);
 
@@ -52,7 +54,7 @@
             exit();
         endif;
 
-        $CmdSQL = "INSERT INTO usuario (CPF,NomeCompletoUsuario,Email,Tel,Senha,TipoUsuario,DtNascimento,CPFUsuario) VALUES (:CPF, :NomeCompleto, :Email, :Tel, :Senha, 'comum', :DtNascimento, :CPF)";
+        $CmdSQL = "INSERT INTO usuario (CPF,NomeCompletoUsuario,Email,Tel,Senha,TipoUsuario,DtNascimento,CPFUsuario,NomeUsuario) VALUES (:CPF, :NomeCompleto, :Email, :Tel, :Senha, 'comum', :DtNascimento, :CPF, :Apelido)";
 
         $Prepare = $PDO->prepare($CmdSQL);
         $Prepare->bindParam(':CPF',$CPF);
@@ -61,6 +63,7 @@
         $Prepare->bindParam(':Tel',$Tel);
         $Prepare->bindParam(':Senha',$Senha);
         $Prepare->bindParam(':DtNascimento',$DtNascimento);
+        $Prepare->bindParam(':Apelido',$Apelido);
 
         $Resultado = $Prepare->execute();
 

@@ -190,7 +190,7 @@
                         </div>
                         <div class="form-group mx-auto row">
                             <label class="col-lg-4 col-md-4 col-sm-12 ml-auto"><h4>Apelido </h4></label>
-                            <input type="text" name="cadastroNomeUsuario" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" placeholder="Digite apenas letras e números" pattern="[a-z0-9]" required maxlength="11">
+                            <input type="text" name="cadastroApelido" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" placeholder="Digite apenas letras e números" maxlength="12" required>
                         </div>
                         <div class="form-group mx-auto row">
                             <label class="col-lg-4 col-md-4 col-sm-12 ml-auto"><h4>Telefone </h4></label>

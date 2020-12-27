@@ -25,6 +25,7 @@
         $ListaErro = "";
 
         $NomeCompleto = $_POST["edicaoPerfilNomeCompleto"];
+        $Apelido = $_POST["edicaoPerfilApelido"];
         
         $Tel = strval($_POST["edicaoPerfilTel"]);
 
@@ -62,7 +63,7 @@
             exit();
         endif;
 
-        $CmdSQL = "UPDATE usuario SET CPF = :CPFEdicao, NomeCompletoUsuario = :NomeCompleto, Email = :Email, Tel = :Tel, DtNascimento = :DtNascimento, CPFUsuario = :CPFEdicao WHERE CPF = :CPF";
+        $CmdSQL = "UPDATE usuario SET CPF = :CPFEdicao, NomeCompletoUsuario = :NomeCompleto, Email = :Email, Tel = :Tel, DtNascimento = :DtNascimento, CPFUsuario = :CPFEdicao, NomeUsuario = :Apelido WHERE CPF = :CPF";
         $Consulta = $PDO->prepare($CmdSQL);
         $Consulta->bindParam(':CPFEdicao', $CPFEdicao);
         $Consulta->bindParam(":NomeCompleto", $NomeCompleto);
@@ -70,6 +71,7 @@
         $Consulta->bindParam(":Tel",$Tel);
         $Consulta->bindParam(":DtNascimento",$DtNascimento);
         $Consulta->bindParam(":CPF",$CPF);
+        $Consulta->bindParam(":Apelido",$Apelido);
         $Consulta->execute();
 
         if($CPF != $CPFEdicao):

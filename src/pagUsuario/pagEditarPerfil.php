@@ -107,6 +107,10 @@
                             <input type="text" name="edicaoPerfilNomeCompleto" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" value="<?php echo $Dados["NomeCompletoUsuario"]?>" required>
                         </div>
                         <div class="form-group mx-auto row">
+                            <label class="col-lg-4 col-md-4 col-sm-12 ml-auto"><h3>Apelido </h3></label>
+                            <input type="text" name="edicaoPerfilApelido" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" value="<?php echo $Dados["NomeUsuario"]?>" required maxlength="12">
+                        </div>
+                        <div class="form-group mx-auto row">
                             <label class="col-lg-4 col-md-4 col-sm-12 ml-auto"><h3>CPF </h3></label>
                             <input type="text" name="edicaoPerfilCPF" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" value="<?php echo $Dados["CPF"]?>" pattern="[0-9]{11}" required>
                         </div>
