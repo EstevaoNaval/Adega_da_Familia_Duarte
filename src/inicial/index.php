@@ -8,7 +8,7 @@
 
         $PDO = CriarConexao();
 
-        $CmdSQL = "SELECT NomeCompletoUsuario, TipoUsuario FROM usuario WHERE CPF = :CPF";
+        $CmdSQL = "SELECT NomeUsuario, TipoUsuario FROM usuario WHERE CPF = :CPF";
         $Consulta = $PDO->prepare($CmdSQL);
         $Consulta->bindParam(':CPF',$CPF);
         $Consulta->execute();
@@ -54,6 +54,14 @@
                     <a class="nav-link" href="../vinho/pagCatalogoVinho.php"><img src="https://img.icons8.com/ios-filled/50/ffffff/wine-glass.png" class="mx-2" height="16" width="16"/>Catálogo de Vinhos</a>
                 </li>
                 <li class="nav-item active border border-light mx-1 mb-1 rounded-pill">
+                    <a class="nav-link" href="#FAQ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill mx-2" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                        </svg>
+                        F.A.Q
+                    </a>
+                </li>
+                <li class="nav-item active border border-light mx-1 mb-1 rounded-pill">
                     <a class="nav-link" href="#contatos">
                         <img src="https://img.icons8.com/android/24/ffffff/contacts.png" height="16px" width="16" class="mx-2"/>
                         Contatos
@@ -70,7 +78,7 @@
                             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                         </svg> 
                         <?php
-                            echo "Bem vindo(a) ".$Dados["NomeCompletoUsuario"];
+                            echo "Bem vindo(a) ".$Dados["NomeUsuario"];
                         ?>
                     </a>
                 </li>
@@ -137,17 +145,21 @@
                     </div>
 
                     <?php endif;?>
+                    <div class="container">
+                        <form action="../login/login.php" method="POST">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="mx-auto col-lg-2 col-md-2 col-sm-12 mb-4"><h4>Email </h4></label>
+                                    <input type="email" name="loginEmail" class="form-control mx-auto col-lg-3 col-md-3 col-sm-8 rounded-pill mb-4 border border-dark" placeholder="Ex.: exemplo@exemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                                    
+                                    <label class="mx-auto col-lg-2 col-md-2 col-sm-12 mb-4"><h4>Senha </h4></label>
+                                    <input type="password" name="loginSenha" class="form-control mx-auto col-lg-3 col-md-3 col-sm-8 rounded-pill mb-4 border border-dark" placeholder="Insira sua senha" required>
 
-                    <form action="../login/login.php" class="form-group row" method="POST">
-                
-                        <label class="mx-auto col-lg-2 col-md-2 col-sm-12 mb-4"><h4>Email </h4></label>
-                        <input type="email" name="loginEmail" class="form-control mx-auto col-lg-3 col-md-3 col-sm-12 rounded-pill mb-4 border border-dark" placeholder="Ex.: exemplo@exemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-                        
-                        <label class="mx-auto col-lg-2 col-md-2 col-sm-12 mb-4"><h4>Senha </h4></label>
-                        <input type="password" name="loginSenha" class="form-control mx-auto col-lg-3 col-md-3 col-sm-12 rounded-pill mb-4 border border-dark" placeholder="Insira sua senha" required>
-
-                        <input type="submit" value="Acessar" class="btn btn-outline-light mx-auto col-lg-1 col-md-1 col-sm-12 rounded-pill mb-4" name="btnAcessar">
-                    </form>
+                                    <input type="submit" value="Acessar" class="btn btn-outline-light mx-auto col-lg-1 col-md-1 col-sm-8 rounded-pill mb-4" name="btnAcessar">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,6 +187,10 @@
                         <div class="form-group mx-auto row">
                             <label class="col-lg-4 col-md-4 col-sm-12 ml-auto"><h4>Nome completo </h4></label>
                             <input type="text" name="cadastroNomeCompleto" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" placeholder="Ex.: João da Silva Pinto" required>
+                        </div>
+                        <div class="form-group mx-auto row">
+                            <label class="col-lg-4 col-md-4 col-sm-12 ml-auto"><h4>Apelido </h4></label>
+                            <input type="text" name="cadastroNomeUsuario" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" placeholder="Digite apenas letras e números" pattern="[a-z0-9]" required maxlength="11">
                         </div>
                         <div class="form-group mx-auto row">
                             <label class="col-lg-4 col-md-4 col-sm-12 ml-auto"><h4>Telefone </h4></label>
@@ -212,7 +228,180 @@
         </div>
         <br><br>
     </section>
-    <section id="contatos" class="jarallax border-bottom border-dark" data-jarallax data-speed="0.2">
+
+    <section id="FAQ" class="jarallax border-bottom border-light" data-jarallax data-speed="0.2">
+        <div class="container text-center text-white anime">
+            <header>
+                <h1 class="display-4 my-auto">Perguntas frequentes</h1>
+            </header>
+            <br><br>
+
+            <div class="accordion mb-5" id="accordionFAQ" style="color: #800000;">
+                <div class="card">
+                    <div class="card-header" id="headingQuest01">
+                    <h5 class="mb-0">
+                        <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest01" aria-expanded="true" aria-controls="collapseOne" style="color: #800000;">
+                            <h4>1. Todos os vinhos do catálogo da Família Duarte estão no site?</h4>
+                        </button>
+                    </h5>
+                    </div>
+
+                    <div id="collapseQuest01" class="collapse" aria-labelledby="headingQuest01" data-parent="#accordionFAQ">
+                    <div class="card-body">
+                        <h5>Inicialmente, não. Entretanto, estamos trabalhando ao máximo para migrar todos os nossos vinhos para o nosso sistema online. Em breve, você poderá aproveitar todos os vinhos de nossas barricas!</h5>
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest02">
+                    <h5 class="mb-0">
+                        <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest02" aria-expanded="false" aria-controls="collapseQuest02" style="color: #800000;">
+                            <h4>2. A Adega da Família Duarte possui um endereço físico?<h4>
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapseQuest02" class="collapse" aria-labelledby="headingQuest02" data-parent="#accordionFAQ">
+                    <div class="card-body">
+                        <h5>Sim! A Adega da Família Duarte possui pontos comerciais no Rio de Janeiro, São Paulo e Rio Grande do Sul. Além do centro onde guardamos nossas barricas no Rio Grande do Sul.<h5><br>
+                        <h5><strong>Localizações:</strong></h5><br>
+                        <h5><strong>São Paulo:</strong> Rua Nossa Senhora da Clemência, nº 25, Higienópolis, São Paulo/SP</h5>
+                        <h5>Avenida Paulista, nº 572, Bela Vista, São Paulo/SP</h5>
+                        <h5>Rua dos Mineiros, nº 973, Itaim Bibi, São Paulo/SP</h5><br>
+                        <h5><strong>Rio de Janeiro:</strong> Avenida Atlântica, nº 248, Copacabana, Rio de Janeiro/RJ</h5>
+                        <h5>Avenida Rio Branco, nº 9221, Centro, Rio de Janeiro/RJ</h5>
+                        <h5>Rua Padre Aloíso Paiva, nº 1242, Urca, Rio de Janeiro/RJ</h5><br>
+                        <h5><strong>Rio Grande do Sul:</strong> Rua das Labaredas, nº 842, Porto Alegre, Porto Alegre/RS</h5><br>
+                        <h5><strong>Centro de armazenamento:</strong> Estrada dos vinhos, nº 720, Caxias do Sul, Caxias do Sul/RS</h5><br>
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest03">
+                    <h5 class="mb-0">
+                        <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest03" aria-expanded="false" aria-controls="collapseQuest03" style="color: #800000;">
+                            <h4>3. Os vinhos premium podem ser comprados aqui?<h4>
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapseQuest03" class="collapse" aria-labelledby="headingQuest03" data-parent="#accordionFAQ">
+                    <div class="card-body">
+                        <h5>Por conta da raridade, antiguidade e para segurança de certos vinhos, leilões online serão feitos para arremata-los. No site, você poderá ver avisos de quando e onde estes leilões acontecerão. Excepcionalmente, vinhos muito mais raros serão arrematados via leilões presenciais. Convites para estes encontros presenciais serão enviados para associados do site com certo nível de fidelidade.<h5>
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest04">
+                    <h5 class="mb-0">
+                        <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest04" aria-expanded="false" aria-controls="collapseQuest04" style="color: #800000;">
+                            <h4>4. Como escolher um vinho?</h4>
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapseQuest04" class="collapse" aria-labelledby="headingQuest04" data-parent="#accordionFAQ">
+                    <div class="card-body">
+                        <h5>Você pode escolher um vinho indo para o catálogo e vendo cada tipo de vinho, bem como onde foram feitos, seu teor alcoólico, temperatura de consumo, etc.<h5>
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest05">
+                        <h5 class="mb-0">
+                            <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest05" aria-expanded="false" aria-controls="collapseQuest05" style="color: #800000;">
+                                <h4>5. Como comprar?</h4>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseQuest05" class="collapse" aria-labelledby="headingQuest05" data-parent="#accordionFAQ">
+                        <div class="card-body">
+                            <h5>Comprar no site da Adega da Família Duarte é algo muito simples.</h5><br>
+                            <h5>Basta o usuário ir ao catálogo de vinhos. Após isto, o usuário clica no botão de comprar embaixo de cada cartão com os dados do vinho, e este será enviado para o processo de compra.</h5><br>
+                            <h5>Se estiver em dúvida e quiser uma recomendação, o usuário pode nos enviar um email para <a href="mailto:adegafamiliaduarte@gmail.com" style="color: #800000;">adegafamiliaduarte@gmail.com</a>, um telefonema para +55 (021) 3433-9973 ou um whatsapp para +55 (021) 98733-0456.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest06">
+                        <h5 class="mb-0">
+                            <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest06" aria-expanded="false" aria-controls="collapseQuest06" style="color: #800000;">
+                                <h4>6. Que formas de pagamento o site aceita?</h4>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseQuest06" class="collapse" aria-labelledby="headingQuest06" data-parent="#accordionFAQ">
+                        <div class="card-body">
+                            <h5>Nossa loja virtual aceita pagamentos via boleto, e cartões de crédito das bandeiras Visa, Mastercard e Elo.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest07">
+                        <h5 class="mb-0">
+                            <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest07" aria-expanded="false" aria-controls="collapseQuest07" style="color: #800000;">
+                                <h4>7. E se eu tiver dúvidas sobre a minha compra?</h4>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseQuest07" class="collapse" aria-labelledby="headingQuest07" data-parent="#accordionFAQ">
+                        <div class="card-body">
+                            <h5>Estaremos prontos a respondê-la. Basta enviar um e-mail para <a href="mailto:adegafamiliaduarte@gmail.com" style="color: #800000;">adegafamiliaduarte@gmail.com</a>, um telefonema para +55 (021) 3433-9973 ou um whatsapp para +55 (021) 98733-0456. 
+                            O período de atendimento é de segunda a sexta-feira entre 8:45h e 18h e sábados entre 9h e 15h. Não atendemos em feriados.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest08">
+                        <h5 class="mb-0">
+                            <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest08" aria-expanded="false" aria-controls="collapseQuest08" style="color: #800000;">
+                                <h4>8. Quais são as vantagens em me tornar um associado?</h4>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseQuest08" class="collapse" aria-labelledby="headingQuest08" data-parent="#accordionFAQ">
+                        <div class="card-body">
+                            <h5>- Comprar, pela internet, os melhores vinhos pelo melhor preço.</h5><br>
+                            <h5>- Participar de promoções exclusivas do site.</h5><br>
+                            <h5>- Com um determinado tempo de fidelidade, ser convidado para leilões presenciais de vinhos raríssimos.</h5><br>
+                            <h5>- Receber nossa newsletter por email, com novidades do site, eventos de vinho, degustações e jantares com produtores, promoções especiais e muito mais.</h5><br>
+                            <h5>Mesmo se você já for nosso cliente, cadastre-se novamente para usufruir também de todas as vantagens do site.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest09">
+                        <h5 class="mb-0">
+                            <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest09" aria-expanded="false" aria-controls="collapseQuest09" style="color: #800000;">
+                                <h4>9. Eu gostaria de receber vinhos da Adega da Família Duarte em meu(s) restaurante(s)</h4>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseQuest09" class="collapse" aria-labelledby="headingQuest09" data-parent="#accordionFAQ">
+                        <div class="card-body">
+                            <h5>Muitas redes de restaurantes optam pelo nosso serviço de vinhos. A nossa qualidade cria uma boa relação entre nós e estes restaurantes.</h5><br>
+                            <h5>Você pode requerer nossos serviços e tirar quaisquer dúvidas sobre através do nosso email <a href="mailto:adegafamiliaduarte@gmail.com" style="color: #800000;">adegafamiliaduarte@gmail.com</a>.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingQuest10">
+                        <h5 class="mb-0">
+                            <button class="btn" type="button" data-toggle="collapse" data-target="#collapseQuest10" aria-expanded="false" aria-controls="collapseQuest10" style="color: #800000;">
+                                <h4>10. Outras dúvidas</h4>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseQuest10" class="collapse" aria-labelledby="headingQuest10" data-parent="#accordionFAQ">
+                        <div class="card-body">
+                            <h5>Para quaisquer dúvidas, você pode enviar um e-mail para <a href="mailto:adegafamiliaduarte@gmail.com" style="color: #800000;">adegafamiliaduarte@gmail.com</a>, um telefonema para +55 (021) 3433-9973 ou um whatsapp para +55 (021) 98733-0456. 
+                            O período de atendimento é de segunda a sexta-feira entre 8:45h e 18h e sábados entre 9h e 15h. Não atendemos em feriados.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="jarallax border-bottom border-light" data-jarallax data-speed="0.2">
         <div class="container text-center text-white anime">
             <header>
                 <h1 class="display-4 my-auto">Contatos</h1>
@@ -225,7 +414,7 @@
                     </svg>
                     <h3>E-mail</h3>
                     <p>Tem alguma dúvida?</p>
-                    <h4>adegafamilianaval@gmail.com</h4>
+                    <h4><a href="mailto:adegafamiliaduarte@gmail.com" class="text-white">adegafamiliaduarte@gmail.com</a></h4>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-12 rounded border border-light mx-auto">
                     <svg width="64" height="64" viewBox="0 0 16 16" class="bi bi-telephone-fill my-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -234,20 +423,20 @@
                     <h3>Telefone</h3>
                     <p>Você pode ligar a qualquer hora</p>
                     <h4>Fixo: +55 (021) 3433-9973</h4>
-                    <h4>Celular: +55 (021) 98733-0456</h4>
+                    <h4>WhatsApp: +55 (021) 98733-0456</h4>
                 </div>
             </div>
         </div>
         <br><br>
     </section>
-    <section id="footer" class="jarallax border-bottom border-light" data-jarallax data-speed="0.2" style="background-color: white;">
+    <section id="footer" class="jarallax border-bottom border-dark" data-jarallax data-speed="0.2" style="background-color: white;">
         <div class="container" style="color: #800000;">
             <div class="row">
-                <div class="col-4 mx-auto">
+                <div class="col-lg-4 col-md-4 col-sm-12 mx-auto">
                     <img src="../assets/site/Brasao_Duarte_Full.png" height="320" width="256" class="mx-auto">
                 </div>
-                <div class="my-4 linha-vertical"></div>
-                <div class="col-6 my-4 mx-auto">
+                <div class="linha-vertical my-4"></div>
+                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto">
                     <h1>Adega da Família Duarte</h1>
                     <h3>A tradição máxima em forma de vinhos</h3>
                     <hr color="#800000">
@@ -275,19 +464,20 @@
                         </a>
                     </div>
                     <br>
-                    <h4>Créditos para:</h4>
-                    <div class="row">
-                        <a href="https://icons8.com/icon/8336/wine-glass" class="mx-auto" style="color: #800000;">Ícone Wine Glass feito por Icons8</a>
-                        <a href="https://icons8.com/icon/3222/contacts" class="mx-auto" style="color: #800000;">Ícone Contacts feito por Icons8</a>
-                        <a href="https://ih1.redbubble.net/image.232892385.2060/ap,550x550,12x16,1,transparent,t.u1.png" style="color: #800000;" class="mx-auto">Rodapé brasão Duarte</a>
+                    <h4>Mural do reconhecimento:</h4>
+                    <div class="container rounded" style="border: 2px solid #800000;">
+                        <div class="row">
+                            <a href="https://icons8.com/icon/8336/wine-glass" class="mx-auto" style="color: #800000;">Ícone Wine Glass feito por Icons8</a>
+                            <a href="https://icons8.com/icon/3222/contacts" class="mx-auto" style="color: #800000;">Ícone Contacts feito por Icons8</a>
+                            <a href="https://ih1.redbubble.net/image.232892385.2060/ap,550x550,12x16,1,transparent,t.u1.png" style="color: #800000;" class="mx-auto">Rodapé brasão Duarte</a>
+                        </div>
+                        <div class="row">
+                            <a href="https://s1.1zoom.me/b5050/244/Barrel_Wine_Grapes_Bottle_528771_1920x1080.jpg" style="color: #800000;" class="mx-auto">Tela inicial</a>
+                            <a href="https://www.melcohit.com/UploadData/z_externalFile/magazine_mehit_life/10_MEHITS_LIFE.pdf" style="color: #800000;" class="mx-auto">Barris de vinho</a>
+                            <a href="https://www.origemdosobrenome.com.br/wp-content/gallery/brasao-duarte/brasao-sobrenome-familia-duarte-2.jpg" class="mx-auto" style="color: #800000;">Logo brasão Duarte</a>
+                            <a href="https://www.stonoticias.com.ar/control/archivos/2b(13).jpg" class="mx-auto" style="color: #800000;">Taças em grupo</a>
+                        </div>
                     </div>
-                    <div class="row">
-                        <a href="https://s1.1zoom.me/b5050/244/Barrel_Wine_Grapes_Bottle_528771_1920x1080.jpg" style="color: #800000;" class="mx-auto">Tela inicial</a>
-                        <a href="https://www.melcohit.com/UploadData/z_externalFile/magazine_mehit_life/10_MEHITS_LIFE.pdf" style="color: #800000;" class="mx-auto">Barris de vinho</a>
-                        <a href="https://www.origemdosobrenome.com.br/wp-content/gallery/brasao-duarte/brasao-sobrenome-familia-duarte-2.jpg" class="mx-auto" style="color: #800000;">Logo brasão Duarte</a>
-                        <a href="https://www.stonoticias.com.ar/control/archivos/2b(13).jpg" class="mx-auto" style="color: #800000;">Taças em grupo</a>
-                    </div>
-
                 </div>
             </div>
         </div>

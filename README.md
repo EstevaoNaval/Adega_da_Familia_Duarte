@@ -25,7 +25,7 @@ These will cover the visual part of the project.
 
 These will cover the functional part of the project.
 
--   [ ] User can see a FAQ section
+-   [X] ~User can see a FAQ section~
 -   [X] ~User can contact the staff members via a contact form~
 -   [X] ~User can sign up to receive notifications about the product~
 -   [ ] User can purchase the product
