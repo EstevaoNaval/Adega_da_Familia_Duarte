@@ -8,7 +8,7 @@
 
         $PDO = CriarConexao();
 
-        $CmdSQL = "SELECT NomeCompletoUsuario, TipoUsuario  FROM usuario WHERE CPF = :CPF";
+        $CmdSQL = "SELECT NomeUsuario, TipoUsuario  FROM usuario WHERE CPF = :CPF";
         $Resultado = $PDO->prepare($CmdSQL);
         $Resultado->bindParam(':CPF',$CPF);
         $Resultado->execute();
@@ -84,7 +84,7 @@
                             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                         </svg> 
                         <?php
-                            echo "Bem vindo(a) ".$Dados["NomeCompletoUsuario"];
+                            echo "Bem vindo(a) ".$Dados["NomeUsuario"];
                         ?>
                     </a>
                 </li>
