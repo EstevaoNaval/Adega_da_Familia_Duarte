@@ -1,5 +1,5 @@
 // Set a variable for our button element.
-const scrollToTopButton = document.getElementById('js-top');
+const scrollToTopButton = document.querySelector("#js-top");
 
 // Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
 const scrollFunc = () => {
@@ -8,9 +8,9 @@ const scrollFunc = () => {
   
   // If the scroll value is greater than the window height, let's add a class to the scroll-to-top button to show it!
   if (y > 0) {
-    scrollToTopButton.className = "top-link show";
+    scrollToTopButton.setAttribute("style","opacity: 1;");
   } else {
-    scrollToTopButton.className = "top-link hide";
+    scrollToTopButton.setAttribute("style","opacity: 0;");
   }
 };
 
