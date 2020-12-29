@@ -20,3 +20,9 @@ body {
     height: 320px;/*Altura da linha*/
     border-left: 2px solid #800000;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
 }
+
+@media (max-width: 792px){
+    .linha-vertical {
+        display: none;
+    }
+}

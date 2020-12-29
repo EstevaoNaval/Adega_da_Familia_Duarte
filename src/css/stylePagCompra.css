@@ -6,19 +6,14 @@ body {
     position: relative;
 }
 
-.linha-vertical{
-    height: 320px;/*Altura da linha*/
-    border-left: 2px solid #800000;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
-}
-
 .jarallax {
     position: relative;
     z-index: 0;
 }
 
-#dadosPessoais, #edicaoUsuario, #cadastroVinho, #trocaSenha, #edicaoPerfil {
-    color: white;
-    background-color: #800000;
+.linha-vertical{
+    height: 320px;/*Altura da linha*/
+    border-left: 2px solid #800000;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
 }
 
 @media (max-width: 792px){

@@ -84,6 +84,12 @@
                 </li>
             </ul>
         </div>
+
+        <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-basket3-fill" viewBox="0 0 16 16">
+                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426L.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
+            </svg>
+        </a>
     </nav>
     <section class="my-5">
         <div class="container">
@@ -102,9 +108,9 @@
                     ?>
                 </div>
                 <div class="card-footer text-center border border-light">
-                    <a class="btn btn-outline-light mx-auto col-4 rounded-pill" href="../pagEditarPerfil.php">Editar perfil</a>
-                    <a class="btn btn-outline-light mx-auto col-3 rounded-pill" href="../../funcao/logout.php">Sair</a>
-                    <a class="btn btn-outline-light mx-auto col-4 rounded-pill" href="../excluirConta.php">Excluir conta</a>
+                    <a class="btn btn-outline-light mx-auto col-sm-8 col-md-4 col-lg-4 rounded-pill mb-2" href="../pagEditarPerfil.php">Editar perfil</a>
+                    <a class="btn btn-outline-light mx-auto col-sm-8 col-md-3 col-lg-3 rounded-pill mb-2" href="../../funcao/logout.php">Sair</a>
+                    <a class="btn btn-outline-light mx-auto col-sm-8 col-md-4 col-lg-4 rounded-pill" href="../excluirConta.php">Excluir conta</a>
                 </div>
             </div>
         </div>
@@ -139,9 +145,9 @@
                         </div>
                 </div>
                 <div class="card-footer text-center border border-light">
-                        <input type="submit" name="btnConcederPermissao" class="btn btn-outline-light mx-auto col-4 rounded-pill" value="Conceder permissão" onclick="return confirmarDecisao()">
-                        <input type="submit" name="btnRetirarPermissao" class="btn btn-outline-light mx-auto col-4 rounded-pill" value="Retirar permissão" onclick="return confirmarDecisao()">
-                        <input type="submit" name="btnExcluirUsuario" class="btn btn-outline-light mx-auto col-3 rounded-pill" value="Excluir usuário" onclick="return confirmarDecisao()">
+                        <input type="submit" name="btnConcederPermissao" class="btn btn-outline-light mx-auto col-sm-8 col-md-4 col-lg-4 rounded-pill mb-2" value="Conceder permissão" onclick="return confirmarDecisao()">
+                        <input type="submit" name="btnRetirarPermissao" class="btn btn-outline-light mx-auto col-sm-8 col-md-4 col-lg-4 rounded-pill mb-2" value="Retirar permissão" onclick="return confirmarDecisao()">
+                        <input type="submit" name="btnExcluirUsuario" class="btn btn-outline-light mx-auto col-sm-8 col-md-3 col-lg-3 rounded-pill" value="Excluir usuário" onclick="return confirmarDecisao()">
                     </form>
                 </div>
             </div>
@@ -211,13 +217,13 @@
                             <input type="text" name="cadastroVinhoPreco" class="form-control col-lg-4 col-md-4 col-sm-12 rounded-pill mr-auto border border-dark" required placeholder="Ex.: 120.25" pattern="[\d,.]*">
                         </div>
                         <div class="file-field row">
-                            <input type="file" class="rounded-pill ml-auto col-9" name="cadastroVinhoImg" onchange="previewImagem()" required><br><br>
-			                <img style="width: 350px;" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" name="preView" class="rounded border border-dark mx-auto">
+                            <input type="file" class="rounded-pill mr-auto col-9" name="cadastroVinhoImg" onchange="previewImagem()" required><br><br>
+			                <img style="width: 320px;" id="cadastroPreView" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" name="preView" class="rounded border border-dark mx-auto">
                         </div>
                         
                 </div>
                 <div class="card-footer border border-light">
-                    <input type="submit" name="btnCadastrarVinho" class="btn btn-outline-light mx-auto col-6 rounded-pill" value="Cadastrar">
+                    <input type="submit" name="btnCadastrarVinho" class="btn btn-outline-light mx-auto col-8 rounded-pill" value="Cadastrar">
                     </form>
                 </div>
             </div>
@@ -227,11 +233,11 @@
     <section id="footer" class="jarallax border-bottom border-light" data-jarallax data-speed="0.2" style="background-color: white;">
         <div class="container" style="color: #800000;">
             <div class="row">
-                <div class="col-4 mx-auto">
+                <div class="col-lg-4 col-md-4 col-sm-12 mx-auto">
                     <img src="../../assets/site/Brasao_Duarte_Full.png" height="320" width="256" class="mx-auto">
                 </div>
-                <div class="my-4 linha-vertical"></div>
-                <div class="col-6 my-4 mx-auto">
+                <div class="linha-vertical my-4"></div>
+                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto">
                     <h1>Adega da Família Duarte</h1>
                     <h3>A tradição máxima em forma de vinhos</h3>
                     <hr color="#800000">

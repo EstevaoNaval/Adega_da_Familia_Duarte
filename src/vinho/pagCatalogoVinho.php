@@ -105,6 +105,12 @@
                 ?>
             </ul>
         </div>
+
+        <a class="nav-link" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-basket3-fill" viewBox="0 0 16 16">
+                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426L.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
+            </svg>
+        </a>
     </nav>
 
     <section id="catalogoVinho">
@@ -140,12 +146,13 @@
                         <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M12.166 8.94C12.696 7.867 13 6.862 13 6A5 5 0 0 0 3 6c0 .862.305 1.867.834 2.94.524 1.062 1.234 2.12 1.96 3.07A31.481 31.481 0 0 0 8 14.58l.208-.22a31.493 31.493 0 0 0 1.998-2.35c.726-.95 1.436-2.008 1.96-3.07zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/><path fill-rule="evenodd" d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg> Região: <?php echo $CatalogoVinho["Regiao"];?></p>
                         <p class="card-text"><img src="../assets/site/farm.png" height="16px" width="16px" style="fill: currentColor;"/> Produtora: <?php echo $CatalogoVinho["Vinicola"];?></p>
                     </div>
-                    <?php if(isset($_SESSION["logado"])): if($Dados["TipoUsuario"] == "admin"):?>
                     <div class="card-footer border border-light">
-                        <a href="#" class="btn btn-outline-light rounded-pill" onclick="editarVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Editar</a>
-                        <a href="#" class="btn btn-outline-light rounded-pill" onclick="excluirVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Excluir</a>
+                    <?php if(isset($_SESSION["logado"])): if($Dados["TipoUsuario"] == "admin"):?>
+                        <a href="#" class="btn btn-outline-light rounded-pill col-3 mx-auto" onclick="editarVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Editar</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill col-3 mx-auto" onclick="excluirVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Excluir</a>
+                    <?php endif; endif;?>
+                        <a href="#" class="btn btn-outline-light rounded-pill col-4 mx-auto" onclick="adicionarProdCarrinho(<?php echo $CatalogoVinho['IDVinho']?>)">Comprar</a>
                     </div>
-                    <?php endif; endif;?> 
                 </div>
                 <?php endforeach;?>
             </div>
@@ -180,12 +187,13 @@
                         <p class="card-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M12.166 8.94C12.696 7.867 13 6.862 13 6A5 5 0 0 0 3 6c0 .862.305 1.867.834 2.94.524 1.062 1.234 2.12 1.96 3.07A31.481 31.481 0 0 0 8 14.58l.208-.22a31.493 31.493 0 0 0 1.998-2.35c.726-.95 1.436-2.008 1.96-3.07zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/><path fill-rule="evenodd" d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg> Região: <?php echo $CatalogoVinho["Regiao"];?></p>
                         <p class="card-text"><img src="../assets/site/farm.png" height="16px" width="16px" style="fill: currentColor;"/> Produtora: <?php echo $CatalogoVinho["Vinicola"];?></p>
                     </div>
-                    <?php if(isset($_SESSION["logado"])): if($Dados["TipoUsuario"] == "admin"):?>
                     <div class="card-footer border border-light">
-                        <a href="#" class="btn btn-outline-light rounded-pill" onclick="editarVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Editar</a>
-                        <a href="#" class="btn btn-outline-light rounded-pill" onclick="excluirVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Excluir</a>
+                    <?php if(isset($_SESSION["logado"])): if($Dados["TipoUsuario"] == "admin"):?>
+                        <a href="#" class="btn btn-outline-light rounded-pill col-3 mx-auto" onclick="editarVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Editar</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill col-3 mx-auto" onclick="excluirVinho(<?php echo $CatalogoVinho['IDVinho'];?>)">Excluir</a>
+                    <?php endif; endif;?>
+                        <a href="#" class="btn btn-outline-light rounded-pill col-4 mx-auto" onclick="adicionarProdCarrinho(<?php echo $CatalogoVinho['IDVinho']?>)">Comprar</a>
                     </div>
-                    <?php endif; endif;?> 
                 </div>
                 <?php endforeach;?>
             </div>
@@ -194,11 +202,11 @@
     <section id="footer" class="jarallax border-bottom border-light" data-jarallax data-speed="0.2" style="background-color: white;">
         <div class="container" style="color: #800000;">
             <div class="row">
-                <div class="col-4 mx-auto">
+                <div class="col-lg-4 col-md-4 col-sm-12 mx-auto">
                     <img src="../assets/site/Brasao_Duarte_Full.png" height="320" width="256" class="mx-auto">
                 </div>
-                <div class="my-4 linha-vertical"></div>
-                <div class="col-6 my-4 mx-auto">
+                <div class="linha-vertical my-4"></div>
+                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto">
                     <h1>Adega da Família Duarte</h1>
                     <h3>A tradição máxima em forma de vinhos</h3>
                     <hr color="#800000">
@@ -265,8 +273,13 @@
                 window.location.replace("excluirVinho.php?id="+id);
             }
         }
+
         function editarVinho(id){
             window.location.replace("pagEditarVinho.php?id="+id);
+        }
+
+        function adicionarProdCarrinho(id){
+            window.location.replace("../compra/pagCarrinho.php?id="+id);
         }
     </script>
     <script src="../funcao/scrollToTop.js"></script>
