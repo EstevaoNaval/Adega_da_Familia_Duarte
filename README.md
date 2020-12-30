@@ -6,7 +6,7 @@ Este projeto é um sistema de comércio web online completo feito em HTML5, CSS3
 O projeto foi feito no âmbito de um trabalho de conclusão de curso do Colégio Pedro II, no caso, o ensino médio integrado ao curso de análise e desenvolvimento de sistemas da computação.
 
 ## Conclusão
-É com grande orgulho e com grande alegria que eu anuncio a nota máxima neste trabalho. Foi um trabalho árduo, ainda mais sozinho, mas conseguimos, eu, Deus, que foi meu principal guia e pedra angular neste período tão complexo, bem como todos aqueles que me apoiaram. A todos estes que foram como escadas para a alçada do meu sucesso e cordas para a escalada de mais este desafio em minha vida, meu muito obrigado!
+É com grande orgulho e com grande alegria que eu anuncio a nota máxima neste trabalho de conclusão de curso. Foi um trabalho árduo, ainda mais sozinho, mas conseguimos, eu, Deus, que foi meu principal guia e pedra angular neste período tão complexo, bem como todos aqueles que me apoiaram. A todos estes que foram como escadas para a alçada do meu sucesso e cordas para a escalada de mais este desafio em minha vida, meu muito obrigado!
 
 ![](src/assets/site/premiacaoTCC01.PNG)
 
