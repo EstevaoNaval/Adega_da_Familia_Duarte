@@ -115,6 +115,17 @@
 
     <section id="catalogoVinho">
         <div class="container text-center text-white">
+            <div class="d-flex my-2 align-items-center text-white bg-success border-0 rounded-pill" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" id="toastProdAdicionado" style="width:35vh;">
+                <div class="toast-body">
+                    Produto adicionado ao carrinho com sucesso.
+                </div>
+            </div>
+            <div class="d-flex my-2 align-items-center text-white bg-secondary border-0 rounded-pill" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000" id="toastExcluirProd" style="width:35vh;">
+                <div class="toast-body">
+                    Produto excluído ao carrinho com sucesso.
+                </div>
+            </div>
+
             <header>
                 <h1 class="display-4">Vinhos</h1>
             </header>
@@ -268,6 +279,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script>
+        $("#toastProdAdicionado").toast('hide');
+
         function excluirVinho(id){
             if(confirm("Você realmente deseja fazer isto?")){
                 window.location.replace("excluirVinho.php?id="+id);
@@ -279,7 +292,7 @@
         }
 
         function adicionarProdCarrinho(id){
-            window.location.replace("../compra/pagCarrinho.php?id="+id);
+            $('#toastProdAdicionado').toast('show');
         }
     </script>
     <script src="../funcao/scrollToTop.js"></script>

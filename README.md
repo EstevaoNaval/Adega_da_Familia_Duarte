@@ -5,6 +5,11 @@ Este projeto é um sistema de comércio web online completo feito em HTML5, CSS3
 
 O projeto foi feito no âmbito de um trabalho de conclusão de curso do Colégio Pedro II, no caso, o ensino médio integrado ao curso de análise e desenvolvimento de sistemas da computação.
 
+## Conclusão
+É com grande orgulho e com grande alegria que eu anuncio a nota máxima neste trabalho. Foi um trabalho árduo, ainda mais sozinho, mas conseguimos, eu, Deus, que foi meu principal guia e pedra angular neste período tão complexo, bem como todos aqueles que me apoiaram. A todos estes que foram como escadas para a alçada do meu sucesso e cordas para a escalada de mais este desafio em minha vida, meu muito obrigado!
+
+![](src/assets/site/premiacaoTCC01.PNG)
+
 ## App-Ideas
 
 ### Landing Page de Produto
@@ -47,17 +52,17 @@ The goal of the Simple Online Store is to give your users the capability of sele
 
 #### Requisistos de usuário
 
--   [ ] User can click on a `View Products` button on the Landing Page to 
-display the Products Page.
--   [ ] User can see a card on the Products Page for each
+-   [X] ~User can click on a `View Products` button on the Landing Page to 
+display the Products Page.~
+-   [X] ~User can see a card on the Products Page for each
 Product showing the product thumbnail, name, price, a short description,
-and a `Select` button.
--   [ ] User can see a Product Details page displayed when the `Select` button
+and a `Select` button.~
+-   [x] ~User can see a Product Details page displayed when the `Select` button
 is clicked showing the same information from the product card, but also a 
 unique product id, a long description, `Add to Cart` button, and a 
-`See More Products` button.
--   [ ] User can see a confirmation message when the product is added to the
-shopping cart.
+`See More Products` button.~
+-   [X] ~User can see a confirmation message when the product is added to the
+shopping cart.~
 -   [ ] User can click on the `See More Products` page to return to the 
 Products Page. 
 -   [ ] User can see a `Shopping Cart` button on both the Landing
