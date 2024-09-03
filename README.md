@@ -3,7 +3,7 @@
 ## Sobre
 Este projeto é um sistema de comércio web online completo feito em HTML5, CSS3, JavaScript no front-end e PHP no back-end. A ideia principal se baseia em um sistema encomendado pela tradicional vendedora de vinhos chamada Adega da Família Duarte.
 
-O projeto foi feito no âmbito de um trabalho de conclusão de curso do Colégio Pedro II, no caso, o ensino médio integrado ao curso de análise e desenvolvimento de sistemas da computação.
+O projeto foi feito no âmbito de um trabalho de conclusão de curso do Colégio Pedro II, no curso de técnico de Análise e Desenvolvimento de Sistemas.
 
 ## Conclusão
 É com grande orgulho e com grande alegria que eu anuncio a nota máxima neste trabalho de conclusão de curso. Foi um trabalho árduo, ainda mais sozinho, mas conseguimos, eu, Deus, que foi meu principal guia e pedra angular neste período tão complexo, bem como todos aqueles que me apoiaram. A todos estes que foram como escadas para a alçada do meu sucesso e cordas para a escalada de mais este desafio em minha vida, meu muito obrigado!
